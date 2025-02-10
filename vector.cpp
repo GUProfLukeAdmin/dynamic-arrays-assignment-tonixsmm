@@ -28,15 +28,19 @@ void part2() {
     vector<bool> v1(10000, 0);
     vector<char> v2(10000, 0);
 
+    // adding elements
+    for (int i = 0; i < 10000; i++) {
+        v1[i] = true;
+        v2[i] = 'a';
+    }
+
     // printing sizes
-    cout << "Memory usage of std::vector<bool>: " << sizeof(v1) << " bytes" << endl;
-    cout << "Memory usage of std::vector<char>: " << sizeof(v2) << " bytes" << endl;
+    cout << "Memory usage of std::vector<bool>: " << v1.capacity() / 8 << " bytes" << endl;
+    cout << "Memory usage of std::vector<char>: " << v2.capacity() * sizeof(char) << " bytes" << endl;
 }
 
 int main() {
-    cout << "Part 1:" << endl << "----------------" << endl;
     part1();
-    cout << endl << "Part 2:" << endl << "----------------" << endl;
     part2();
     return 0;
 }
